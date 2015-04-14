@@ -21,7 +21,7 @@ Thermostat.prototype.increase = function() {
   };
 
   this.temperature ++
-  if(this.temperature > 25){ this.tempColor = "Red"
+  if(this.temperature >= 25){ this.tempColor = "Red"
 
   };
 };
@@ -33,7 +33,7 @@ Thermostat.prototype.decrease = function() {
   }
 
   this.temperature --
-  if(this.temperature < 18){ this.tempColor = "Green"
+  if(this.temperature =< 18){ this.tempColor = "Green"
 
   };
 };
