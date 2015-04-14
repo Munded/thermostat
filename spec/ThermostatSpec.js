@@ -1,30 +1,74 @@
-describe('Thermostat', function(){
+describe('thermostat', function(){
 
-  var thermostat;
+  beforeEach( function(){ 
+      thermostat = new Thermostat()
+    });
 
-  beforeEach(function(){
-    thermostat = new Thermostat();
-  });
-  describe('it can vary it\'s temperature', function(){
+  describe('Changing temperature', function(){
 
-    it('starts with a value of 20', function(){
+    it('default temperature', function(){
       expect(thermostat.temperature).toEqual(20);
     });
 
-    it('can increase the temp by 1', function(){
-      thermostat.up();
+    it('increase by one', function(){
+      thermostat.increase();
       expect(thermostat.temperature).toEqual(21);
     });
 
-    it('can decrease the temp by 1', function(){
-      thermostat.down();
+    it('decrease by one', function(){
+      thermostat.decrease();
       expect(thermostat.temperature).toEqual(19);
     });
 
-    it('has a minimum temperature', function(){
-      thermostat.temperature = 11
-      expect( thermostat.down ).toThrow(new Error('Minimum Temperature Reached'))
+    it('reset to default temperature', function(){
+      thermostat.temperature = 24
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20);
     });
+
+  });
+    
+  describe('Maximum and minimum temperature', function(){
+
+
+    it('cannot go lower than ten', function(){
+      thermostat.temperature = 10;
+      expect( function(){ thermostat.decrease(); }).toThrow(new Error ("You cannot go lower than 10 degrees!"));
+      expect(thermostat.temperature).toEqual(10);
+    });
+
+    it('if powersaving mode is on, max temperature is 25', function(){
+      thermostat.powersaving = true;
+      thermostat.temperature = 25;
+      expect( function(){ thermostat.increase(); }).toThrow(new Error ("Max temperature has been reached"));
+    });
+
+    it('if powersaving mode is off, max temperature is 35', function(){
+      thermostat.powersaving = false;
+      thermostat.temperature = 35;
+      expect( function(){  thermostat.increase(); }).toThrow(new Error ("Max temperature has been reached"));
+    });
+
   });
 
+  describe('temperature controlled color', function(){
+
+    it('25 or over, color is red', function(){
+      thermostat.powersaving = false;
+      thermostat.temperature = 25;
+      thermostat.increase();
+      expect(thermostat.tempColor).toEqual("Red");
+    });
+
+    it('Less than 25, color is yellow', function(){
+      thermostat.temperature = 24;
+      expect(thermostat.tempColor).toEqual("Yellow");
+    });
+
+    it('Less than 18, color is green', function(){
+      thermostat.temperature = 18;
+      thermostat.decrease()
+      expect(thermostat.tempColor).toEqual("Green");
+    });
+  });
 });
