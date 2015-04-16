@@ -37,6 +37,18 @@ describe('thermostat interface', function(){
       expect('#view').toContainText('10');
     });
 
+    it('can redisplay error message for minimum temp', function(){
+      for (i=0; i < 11; i++){
+        $('#buttonDown').click();
+      }
+      $('#buttonUp').click();
+      for (i=0; i < 2; i++){
+        $('#buttonDown').click();
+      }
+      expect('#maxMin').toContainText('Minimum Temperature Reached');
+      expect('#view').toContainText('10');
+    });
+
   });
 
   describe('has colour according to temperature', function(){

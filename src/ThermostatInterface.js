@@ -15,9 +15,10 @@ function view(){
   $('#view').html(thermostat.temperature);
 };
 
-// function errMessage(){
-
-// };
+function temperatureConverter(temp){
+    temp = temp - 273.15
+    return temp.toFixed(1);
+  }
 
 function switchStatus(mode){
   $('#powerSave').html(mode);
@@ -41,13 +42,17 @@ $('#buttonUp').click(function(){
   view();
   if($('#maxMin').text ===('Minimum Temperature Reached')){
   $('#maxMin').fadeOut([0.25])};
+  if(thermostat.temperature === 11){
+  $('#maxMin').fadeOut([0.25])};
 });
 
 $('#buttonDown').click(function(){
   try{ thermostat.decrease(); }
   catch(err){ $('#maxMin').text('Minimum Temperature Reached')};
   view();
-  if(thermostat.temperature === 24){
+  if(thermostat.temperature === 24  && thermostat.powerSaving === true){
+  $('#maxMin').fadeOut([0.25])};
+  if(thermostat.temperature === 34  && thermostat.powerSaving === false){
   $('#maxMin').fadeOut([0.25])};
 });
 
@@ -61,4 +66,12 @@ $('#powerSavingSwitch').click(function(){
   powerSaveSwitch();
   view();
 });
+
+var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
+
+  $.getJSON(OpenWeather, function(data) {
+    getTemp = data.main.temp;
+    temp = temperatureConverter(getTemp);
+    $('#outsideTemperature').html(temp);
+  });
 
