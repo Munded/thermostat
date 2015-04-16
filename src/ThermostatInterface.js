@@ -34,7 +34,7 @@ function view(){
 function temperatureConverter(temp){
     temp = temp - 273.15
     return temp.toFixed(1);
-  }
+};
 
 function switchStatus(mode){
   $('#powerSave').html(mode);
@@ -42,9 +42,22 @@ function switchStatus(mode){
 
 function powerSaveSwitch(){
   if (thermostat.powerSaving){
-   switchStatus('On');}
+   switchStatus('On');
+ }
   else {
     switchStatus('Off');
+  };
+};
+
+function maxMinFade(){
+  if(thermostat.temperature === 11){
+    $('#maxMin').fadeOut([0.25])
+  };
+  if(thermostat.temperature === 24  && thermostat.powerSaving === true){
+    $('#maxMin').fadeOut([0.25])
+  };
+  if(thermostat.temperature === 34  && thermostat.powerSaving === false){
+  $('#maxMin').fadeOut([0.25])
   };
 };
 
@@ -60,12 +73,7 @@ $('#buttonUp').click(function(){
    $('#maxMin').fadeIn();
   };
   view();
-  if($('#maxMin').text ===('Minimum Temperature Reached')){
-    $('#maxMin').fadeOut([0.25])
-  };
-  if(thermostat.temperature === 11){
-    $('#maxMin').fadeOut([0.25])
-  };
+  maxMinFade();
 });
 
 $('#buttonDown').click(function(){
@@ -75,10 +83,7 @@ $('#buttonDown').click(function(){
     $('#maxMin').fadeIn();
   };
   view();
-  if(thermostat.temperature === 24  && thermostat.powerSaving === true){
-  $('#maxMin').fadeOut([0.25])};
-  if(thermostat.temperature === 34  && thermostat.powerSaving === false){
-  $('#maxMin').fadeOut([0.25])};
+  maxMinFade()
 });
 
 $('#buttonReset').click(function(){
