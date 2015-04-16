@@ -10,8 +10,24 @@ function color(){
   if(thermostat.tempColor === "Green") colorChange("rgb(27,152,27)")
 };
 
+function background(){
+  if(thermostat.tempColor === 'Yellow'){
+    $('body').css('background', "url('/css/images/sunny.jpg')");
+  };
+  if(thermostat.tempColor === 'Green'){
+    $('body').css('background', "url('/css/images/cloudy.jpg')");
+  };
+  if(thermostat.temperature <= 13){
+    $('body').css('background', "url('/css/images/cold.jpg')");
+  };
+    if(thermostat.tempColor === 'Red'){
+    $('body').css('background', "url('/css/images/desert.jpg')");
+  };
+};
+
 function view(){
-  color()
+  color();
+  background();
   $('#view').html(thermostat.temperature);
 };
 
@@ -32,13 +48,16 @@ function powerSaveSwitch(){
   };
 };
 
+
 view();
 powerSaveSwitch();
 
 
 $('#buttonUp').click(function(){
   try{ thermostat.increase(); }
-  catch(err){ $('#maxMin').text('Maximum Temperature Reached')};
+  catch(err){
+   $('#maxMin').text('Maximum Temperature Reached')
+    };
   view();
   if($('#maxMin').text ===('Minimum Temperature Reached')){
   $('#maxMin').fadeOut([0.25])};
