@@ -102,4 +102,16 @@ describe('thermostat interface', function(){
 
   });
 
+  describe('Changing background', function(){
+
+    it('displays desert picture when above 25', function(){
+      $('#powerSavingSwitch').click();
+      for (i=0; i< 6; i ++){
+        $('#buttonUp').click();
+      };
+      expect('body').toHaveCss({background: "url('/css/images/desert.jpg')"});
+    });
+
+  });
+
 });
