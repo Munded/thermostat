@@ -37,14 +37,18 @@ powerSaveSwitch();
 
 $('#buttonUp').click(function(){
   try{ thermostat.increase(); }
-  catch(err){ console.log('Maximum Temperature Reached')};
+  catch(err){ $('#maxMin').text('Maximum Temperature Reached')};
   view();
+  if($('#maxMin').text ===('Minimum Temperature Reached')){
+  $('#maxMin').fadeOut([0.25])};
 });
 
 $('#buttonDown').click(function(){
   try{ thermostat.decrease(); }
-  catch(err){ console.log('Minimum Temperature Reached')};
+  catch(err){ $('#maxMin').text('Minimum Temperature Reached')};
   view();
+  if(thermostat.temperature === 24){
+  $('#maxMin').fadeOut([0.25])};
 });
 
 $('#buttonReset').click(function(){

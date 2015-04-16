@@ -25,7 +25,7 @@ describe('thermostat interface', function(){
       for (i=0; i < 16; i++){
         $('#buttonUp').click();
       }
-      // expect('#maxMin').toContainText('Maximum Temperature Reached');
+      expect('#maxMin').toContainText('Maximum Temperature Reached');
       expect('#view').toContainText('35');
     });
 
@@ -33,7 +33,7 @@ describe('thermostat interface', function(){
       for (i=0; i < 11; i++){
         $('#buttonDown').click();
       }
-      // expect('#maxMin').toContainText('Minimum Temperature Reached');
+      expect('#maxMin').toContainText('Minimum Temperature Reached');
       expect('#view').toContainText('10');
     });
 
