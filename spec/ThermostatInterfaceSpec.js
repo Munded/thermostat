@@ -112,6 +112,24 @@ describe('thermostat interface', function(){
       expect('body').toHaveCss({background: "url('/css/images/desert.jpg')"});
     });
 
+    it('displays sunny picture when between 18 and 25', function(){
+      expect('body').toHaveCss({background: "url('/css/images/sunny.jpg')"});
+    });
+
+    it('displays cloudy picture when below 18', function(){
+      for (i=0; i< 3; i ++){
+        $('#buttonDown').click();
+      };
+      expect('body').toHaveCss({background: "url('/css/images/cloudy.jpg')"});
+    });
+
+    it('displays cloudy picture when below 18', function(){
+      for (i=0; i< 6; i ++){
+        $('#buttonDown').click();
+      };
+      expect('body').toHaveCss({background: "url('/css/images/cold.jpg')"});
+    });
+
   });
 
 });
