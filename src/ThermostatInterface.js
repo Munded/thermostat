@@ -57,17 +57,23 @@ $('#buttonUp').click(function(){
   try{ thermostat.increase(); }
   catch(err){
    $('#maxMin').text('Maximum Temperature Reached')
-    };
+   $('#maxMin').fadeIn();
+  };
   view();
   if($('#maxMin').text ===('Minimum Temperature Reached')){
-  $('#maxMin').fadeOut([0.25])};
+    $('#maxMin').fadeOut([0.25])
+  };
   if(thermostat.temperature === 11){
-  $('#maxMin').fadeOut([0.25])};
+    $('#maxMin').fadeOut([0.25])
+  };
 });
 
 $('#buttonDown').click(function(){
   try{ thermostat.decrease(); }
-  catch(err){ $('#maxMin').text('Minimum Temperature Reached')};
+  catch(err){ 
+    $('#maxMin').text('Minimum Temperature Reached');
+    $('#maxMin').fadeIn();
+  };
   view();
   if(thermostat.temperature === 24  && thermostat.powerSaving === true){
   $('#maxMin').fadeOut([0.25])};
