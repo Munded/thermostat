@@ -12,6 +12,31 @@ describe('thermostat interface', function(){
       expect('#view').toContainText('20');
     });
 
+    it('in powersave mode, max temp is 25', function(){
+      for (i=0; i < 6; i++){
+        $('#buttonUp').click();
+      }
+      // expect('#maxMin').toContainText('Maximum Temperature Reached');
+      expect('#view').toContainText('25');
+    });
+
+    it('without powersave mode, max temp is 35', function(){
+      $('#powerSavingSwitch').click();
+      for (i=0; i < 16; i++){
+        $('#buttonUp').click();
+      }
+      // expect('#maxMin').toContainText('Maximum Temperature Reached');
+      expect('#view').toContainText('35');
+    });
+
+    it('minimum temp is 10', function(){
+      for (i=0; i < 11; i++){
+        $('#buttonDown').click();
+      }
+      // expect('#maxMin').toContainText('Minimum Temperature Reached');
+      expect('#view').toContainText('10');
+    });
+
   });
 
   describe('has colour according to temperature', function(){
@@ -28,7 +53,7 @@ describe('thermostat interface', function(){
     });
 
     it('is red above 25', function(){
-      $('#powerSaveSwitch').click()
+      $('#powerSavingSwitch').click()
     for (i=0; i< 6; i ++){
       $('#buttonUp').click()
     };

@@ -1,8 +1,23 @@
 var thermostat = new Thermostat();
 
+function colorChange(change){
+  $('.thermostat').css('color', change);
+};
+
+function color(){
+  if(thermostat.tempColor === "Yellow") colorChange("rgb(255, 215, 0)");
+  if(thermostat.tempColor === "Red") colorChange("rgb(178, 34, 34)");
+  if(thermostat.tempColor === "Green") colorChange("rgb(27,152,27)")
+};
+
 function view(){
+  color()
   $('#view').html(thermostat.temperature);
 };
+
+// function errMessage(){
+
+// };
 
 function switchStatus(mode){
   $('#powerSave').html(mode);
@@ -21,12 +36,14 @@ powerSaveSwitch();
 
 
 $('#buttonUp').click(function(){
-  thermostat.increase();
+  try{ thermostat.increase(); }
+  catch(err){ console.log('Maximum Temperature Reached')};
   view();
 });
 
 $('#buttonDown').click(function(){
-  thermostat.decrease();
+  try{ thermostat.decrease(); }
+  catch(err){ console.log('Minimum Temperature Reached')};
   view();
 });
 
