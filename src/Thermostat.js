@@ -1,7 +1,6 @@
-
 var Thermostat = function(){
   this.temperature = 20
-  this.powersaving = true
+  this.powerSaving = true
   this.tempColor = "Yellow"
 };
 
@@ -12,18 +11,16 @@ var Thermostat = function(){
 // };
 
 Thermostat.prototype.increase = function() {
-  if(this.powersaving === true && this.temperature >= 25){ 
+  if(this.powerSaving === true && this.temperature >= 25){ 
       throw new Error("Max temperature has been reached")
   };
   
-  if(this.powersaving === false && this.temperature >= 35){
+  if(this.powerSaving === false && this.temperature >= 35){
       throw new Error("Max temperature has been reached")
   };
 
   this.temperature ++
-  if(this.temperature >= 25){ this.tempColor = "Red"
-
-  };
+  this.colorChange();
 };
 
 Thermostat.prototype.decrease = function() {
@@ -33,12 +30,20 @@ Thermostat.prototype.decrease = function() {
   }
 
   this.temperature --
-  if(this.temperature =< 18){ this.tempColor = "Green"
-
-  };
+  this.colorChange();
 };
 
 Thermostat.prototype.resetTemperature = function() {
    this.temperature = 20
    this.tempColor = "Yellow"
+};
+
+Thermostat.prototype.colorChange = function() {
+  if(this.temperature >= 25){ this.tempColor = "Red"};
+  if(this.temperature <= 18){ this.tempColor = "Green"};
+  if(this.temperature > 18 && this.temperature < 25){ this.tempColor = "Yellow"}
+};
+
+Thermostat.prototype.changeMode = function() {
+  this.powerSaving = !(this.powerSaving);
 };

@@ -30,6 +30,10 @@ describe('thermostat', function(){
     
   describe('Maximum and minimum temperature', function(){
 
+    it('can change power saving move', function(){
+      thermostat.changeMode();
+      expect(thermostat.powerSaving).toEqual(false)
+    });
 
     it('cannot go lower than ten', function(){
       thermostat.temperature = 10;
@@ -38,13 +42,13 @@ describe('thermostat', function(){
     });
 
     it('if powersaving mode is on, max temperature is 25', function(){
-      thermostat.powersaving = true;
+      thermostat.powerSaving = true;
       thermostat.temperature = 25;
       expect( function(){ thermostat.increase(); }).toThrow(new Error ("Max temperature has been reached"));
     });
 
     it('if powersaving mode is off, max temperature is 35', function(){
-      thermostat.powersaving = false;
+      thermostat.powerSaving = false;
       thermostat.temperature = 35;
       expect( function(){  thermostat.increase(); }).toThrow(new Error ("Max temperature has been reached"));
     });
@@ -54,7 +58,7 @@ describe('thermostat', function(){
   describe('temperature controlled color', function(){
 
     it('25 or over, color is red', function(){
-      thermostat.powersaving = false;
+      thermostat.powerSaving = false;
       thermostat.temperature = 25;
       thermostat.increase();
       expect(thermostat.tempColor).toEqual("Red");
