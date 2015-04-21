@@ -8,35 +8,52 @@
   </head>
 
   <body>
-    <div id="box">
+    <div class="thermostat">
 
-    <section class="greybg">
+      <div id="box">
 
-      <div class="bluedisplay">
-      <span id="view"></span>
-      <div id="degree">°</div>
+        <section class="greybg">
+
+          <div class="bluedisplay">
+            <span id="view"></span>
+            <div id="degree">°</div>
+          </div>
+
+
+          <div class="buttonshadow">
+
+            <div class="buttoncontainer">
+              <button class="btn" id="buttonUp">Up</button>
+              <button class="btn" id="buttonDown">Down</button>
+              <button class="btn" id="buttonReset">Reset</button>
+              <button class="btn" id="powerSavingSwitch">Power Saving</button>
+            </div>
+
+            <div id="powerSaveDiv">Power Saving is <span id="powerSave"></span></div>
+
+          </div>
+        </section>
+
       </div>
-
-
-    <div class="buttonshadow">
-
-      <div class="buttoncontainer">
-        <button class="btn" id="buttonUp">Up</button>
-        <button class="btn" id="buttonDown">Down</button>
-        <button class="btn" id="buttonReset">Reset</button>
-        <button class="btn" id="powerSavingSwitch">Power Saving</button>
-      </div>
-    <div id="powerSaveDiv">Power Saving is <span id="powerSave"></span></div>
     </div>
-    </section>
+
+    <div class="sidebar">
+      <div id="sidebartext">
+        <h1>Le Thermostat!</h1>
+        <p>
+          Post modern art by<br><br>
+          <a href="https://github.com/Munded">Ed O'Brien</a><br>
+          <a href="https://github.com/massud">Massud Gnan</a><br>
+          and<br>
+          <a href="https://github.com/sanjsanj">Sanjay Purswani</a><br>
+        </p>
+      </div>
+    </div>
 
 
+    <!-- <section><span id="maxMin"></span></section> -->
 
-    <section><span id="maxMin"></span></section>
-
-
-   </div>
-    <section>Temperature in London is: <span id="outsideTemperature"></span>°</section>
+    <!-- <section>Temperature in London is: <span id="outsideTemperature"></span>°</section> -->
 
   <script src="src/thermostatInterface.js"></script>
 
