@@ -23,18 +23,18 @@ function maxMinFade(){
 };
 
 function background(){
-  if(thermostat.tempColor === 'Yellow'){
-    $('body').css('background', "url('/css/images/sunny.jpg')");
-  };
-  if(thermostat.tempColor === 'Green'){
-    $('body').css('background', "url('/css/images/cloudy.jpg')");
-  };
-  if(thermostat.temperature <= 13){
-    $('body').css('background', "url('/css/images/cold.jpg')");
-  };
-    if(thermostat.tempColor === 'Red'){
-    $('body').css('background', "url('/css/images/desert.jpg')");
-  };
+  // if(thermostat.tempColor === 'Yellow'){
+  //   $('body').css('background', "url('/css/images/sunny.jpg')");
+  // };
+  // if(thermostat.tempColor === 'Green'){
+  //   $('body').css('background', "url('/css/images/cloudy.jpg')");
+  // };
+  // if(thermostat.temperature <= 13){
+  //   $('body').css('background', "url('/css/images/cold.jpg')");
+  // };
+  //   if(thermostat.tempColor === 'Red'){
+  //   $('body').css('background', "url('/css/images/desert.jpg')");
+  // };
 };
 
 function view(){
@@ -79,7 +79,7 @@ $('#buttonUp').click(function(){
 
 $('#buttonDown').click(function(){
   try{ thermostat.decrease(); }
-  catch(err){ 
+  catch(err){
     $('#maxMin').text('Minimum Temperature Reached');
     $('#maxMin').fadeIn();
   };
@@ -106,4 +106,3 @@ var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
     temp = temperatureConverter(getTemp);
     $('#outsideTemperature').html(temp);
   });
-
