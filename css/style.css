@@ -116,14 +116,35 @@ body {
 
 #view{
   /*display:inline;*/
-  color:black;
+  position: absolute;
+  color: #0A2763;
   font-size: 200px;
   font-family: digital;
   margin-left: 115px;
+  margin-top: 35px;
 }
 
 #degree{
-  display:inline;
-  font-size:200px;
+  /*display:inline;*/
+  position: absolute;
+  color: #0A2763;
+  font-size:180px;
   font-family:digital;
+  margin-left: 300px;
+  margin-top: 40px;
+}
+
+#powerSaveDiv {
+  position: static;
+  color: #0A2763;
+  font-size:20px;
+  margin-left: 255px;
+  margin-top: -150px;
+}
+
+#powerSave {
+  position: static;
+  color: #0A2763;
+  font-size:26px;
+  text-transform: uppercase;
 }
