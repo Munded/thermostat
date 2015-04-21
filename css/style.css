@@ -1,7 +1,12 @@
+
 body {
 
 }
 
+@font-face{
+  font-family: digital;
+  src:url("digital-7 (mono).ttf");
+}
 #box{
   position:absolute;
   background-color: #e1f1ff;
@@ -37,7 +42,7 @@ body {
 }
 
 .buttonshadow{
-  position: relative;
+  position: absolute;
   background-color: grey;
   width: 90%;
   height: 12%;
@@ -49,11 +54,15 @@ body {
 .buttoncontainer{
   border-radius: 3px;
   /*position: relative;*/
-  margin-left: 31px;
+  margin-left: 7px;
+  /*margin-right: auto;*/
 }
 
 .btn{
-  width: 22.85%;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 3px;
+  width: 24%;
   height: 95%;
 }
 
@@ -61,3 +70,19 @@ body {
   color: blue;
   font-size: 35;
 }
+
+#view{
+  display:inline;
+  color:black;
+  font-size: 200px;
+  font-family:digital;
+  margin-top: 100px;
+  margin-bottom:100px;
+}
+
+#degree{
+  display:inline;
+  font-size:200px;
+  font-family:digital;
+}
+
