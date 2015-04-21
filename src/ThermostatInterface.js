@@ -5,9 +5,9 @@ function colorChange(change){
 };
 
 function color(){
-  if(thermostat.tempColor === "Yellow") colorChange("rgb(255, 215, 0)");
-  if(thermostat.tempColor === "Red") colorChange("rgb(178, 34, 34)");
-  if(thermostat.tempColor === "Green") colorChange("rgb(27,152,27)")
+  // if(thermostat.tempColor === "Yellow") colorChange("rgb(255, 215, 0)");
+  // if(thermostat.tempColor === "Red") colorChange("rgb(178, 34, 34)");
+  // if(thermostat.tempColor === "Green") colorChange("rgb(27,152,27)")
 };
 
 function maxMinFade(){
