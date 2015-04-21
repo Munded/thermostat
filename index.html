@@ -3,26 +3,29 @@
     <meta charset="UTF-8">
     <script src="lib/jquery.js"></script>
     <script src="src/Thermostat.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css"> 
   </head>
 
   <body>
     <div id="box">
-      <br>
-    <section class="thermostat"><span id="view"></span>°</section>
-      <br>
+  
+    <section class="greybg">
+    <div class="bluedisplay">
+    <span id="view"></span>°
+    </div>
+    </section>  
     <button class="btn" id="buttonUp">Up</button>
     <button class="btn" id="buttonDown">Down</button>
     <button class="btn" id="buttonReset">Reset</button>
     <button class="btn" id="powerSavingSwitch">Power Saving Switch</button>
-      <br>
-      <br>
+      
     <section> Power Saving is <span id="powerSave"></span></section>
 
     <section><span id="maxMin"></span></section>
-      <br>
+      
     <section>Temperature in London is: <span id="outsideTemperature"></span>°</section>
-      <br>
+      
    </div>
 
   <script src="src/thermostatInterface.js"></script>
