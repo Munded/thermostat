@@ -1,1 +1,5 @@
-"./lib/*"
+
+exclude_paths:
+ - "lib/jasmine-2.2.0/jasmine.js"
+ - "lib/jasmine-jquery.js"
+ - "lib/jasmine-2.2.0/jasmine-html.js"
