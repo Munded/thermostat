@@ -1,12 +1,24 @@
 #Thermostat Challenge
 
+![Thermostat screenshot](https://github.com/Munded/thermostat/blob/master/css/images/output_l1u93N.gif)
+
 Task:
 -----
 
-Write an app to control a thermostat using JavaScript and Jquery, with Jasmine for testing.
+Write a thermostat app to control a thermostat using JavaScript and Jquery, with Jasmine for testing.
 
-[Use the Thermostat web app on Heroku](https://sleepy-hamlet-6933.herokuapp.com/)
+**Technologies Used**
 
-![Thermostat screenshot](http://sanjsanj.github.io/images/week6_thermostat.png)
 
-By @munded @massud and @sanjsanj
+**Testing Done With**
+
+
+**How to run**
+
+
+**How to Test**
+
+
+**Things to Improve**
+
+By @munded and @massud
