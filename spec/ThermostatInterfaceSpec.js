@@ -1,7 +1,7 @@
 describe('thermostat interface', function(){
 
   beforeEach( function(){
-    jasmine.getFixtures().fixturesPath = '.';
+    jasmine.getFixtures().fixturesPath = '/.';
     loadFixtures('index.html');
     thermostat = new Thermostat()
   });
