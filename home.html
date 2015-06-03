@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="lib/jquery.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+
+  <body>
+    <div class="thermostat">
+
+      <div id="box">
+
+        <section class="greybg">
+
+          <div class="bluedisplay">
+            <span id="view"></span>
+            <div id="degree">°</div>
+          </div>
+
+
+          <div class="buttonshadow">
+
+            <div class="buttoncontainer">
+              <button class="btn" id="buttonUp">Up</button>
+              <button class="btn" id="buttonDown">Down</button>
+              <button class="btn" id="buttonReset">Reset</button>
+              <button class="btn" id="powerSavingSwitch">Power Saving</button>
+            </div>
+
+            <div id="powerSaveDiv">Power Saving is <span id="powerSave"></span></div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div id="sidebartext">
+        <h1>Le Thermostat!</h1>
+        <p>
+          Post modern art by<br><br>
+          <a href="https://github.com/Munded">Ed O'Brien</a><br>
+          <a href="https://github.com/massud">Massud Gnan</a><br>
+          and<br>
+          <a href="https://github.com/sanjsanj">Sanjay Purswani</a><br>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- <section><span id="maxMin"></span></section> -->
+
+    <!-- <section>Temperature in London is: <span id="outsideTemperature"></span>°</section> -->
+
+  <script src="src/ThermostatInterface.js"></script>
+
+  </body>
+
+</html>
