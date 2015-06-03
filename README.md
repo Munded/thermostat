@@ -1,5 +1,7 @@
 #Thermostat Challenge
 
+[![Code Climate](https://codeclimate.com/github/Munded/thermostat/badges/gpa.svg)](https://codeclimate.com/github/Munded/thermostat)
+
 ![Thermostat screenshot](https://github.com/Munded/thermostat/blob/master/css/images/output_l1u93N.gif)
 
 Task:
