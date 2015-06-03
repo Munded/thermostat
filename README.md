@@ -25,7 +25,7 @@ Write a thermostat app to control a thermostat using JavaScript and Jquery, with
 
 
 **How to Test**
-$ open SpecRunner.html
+``$ open SpecRunner.html``
 
 
 **Things to Improve**
